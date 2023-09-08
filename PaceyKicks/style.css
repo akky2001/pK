@@ -1,0 +1,436 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  
+}
+.header {
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+ padding: 0 20px;
+}
+.nav {
+  max-width: 100%;
+  /* width: 100%; */
+  margin: 0 auto;
+  padding: 30px;
+  background-color: transparent;
+  padding-top: 3em;
+  padding-right: 5em;
+  
+}
+.nav,
+.nav_item {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+li.nav_item{
+  font-size: 20px;
+
+}
+img.pklogo{
+  height: 60%;
+  width: 50%;
+  padding-top: 0em;
+}
+.nav_link,
+.button {
+  color: #A52A2A;
+}
+
+.nav_item {
+  column-gap: 100px;
+  padding-right:5em;
+}
+.nav_link:hover {
+  color: #555;
+}
+.button {
+  padding: 6px 25px;
+  border: 2px solid #A52A2A;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+}
+.button:active {
+  transform: scale(0.98);
+}
+.button h4 {
+ text-decoration:solid ;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ color: #A52A2A;
+}
+.Welcome-text label{
+  font-size: 50px;
+  font-weight: bold;
+  padding-left: 7em;
+  color: #201e1e;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h3{
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 14em;
+  color: #201e1e;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.Welcome-text{
+  padding-top: 12em;
+  align-items: center;
+  
+}
+/* Home */
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url("images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+.home.show::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Form */
+.form_container {
+  position: fixed;
+  max-width: 320px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+.home.show .form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.signup_form {
+  display: none;
+}
+.form_container.active .signup_form {
+  display: block;
+}
+.form_container.active .login_form {
+  display: none;
+}
+.form_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #0b0217;
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.form_container h2 {
+  font-size: 22px;
+  color: #0b0217;
+  text-align: center;
+}
+.input_box {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+}
+.input_box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  color: #333;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+}
+.input_box input:focus {
+  border-color:#A52A2A;
+}
+.input_box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #707070;
+}
+.input_box i.email,
+.input_box i.password {
+  left: 0;
+}
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password {
+  color: #A52A2A;
+}
+.input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+.option_field {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form_container a {
+  color: #A52A2A;
+  font-size: 12px;
+}
+.form_container a:hover {
+  text-decoration: underline;
+}
+.checkbox {
+  display: flex;
+  column-gap: 8px;
+  white-space: nowrap;
+}
+.checkbox input {
+  accent-color: #A52A2A;
+}
+.checkbox label {
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #0b0217;
+}
+.form_container .button {
+  background: #A52A2A;
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.login_signup {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+form h2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+/* homeTab  */
+
+   .homelink{
+      color: #A52A2A;
+      text-decoration: none;
+      font-size: 37px;
+      font-family: Ink Free;
+   }
+   .hometab1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url("images/bg1.jpg");
+    background-size: cover;
+    background-position: center;
+   }
+
+  .box {
+    margin-bottom: 30px;
+    padding-top: 8em;
+  }
+  
+  .box-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: #A52A2A;
+    font-size: 17px;
+  }
+
+  .box-inner h2{
+    font-size: 50px;
+    text-decoration: underline;
+  }
+  .box-inner h3{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 23px;
+    padding-left: 1em;
+  }
+  .text{
+      max-width: 800px;
+      text-align: center;
+      justify-self: center;
+      padding: 0px;
+      margin: 0 auto;
+      color: white;
+  }
+  
+  /* product section */
+
+  
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.item-name {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+nav.navi{
+  height: 20%;
+  width: 100%;
+  padding: 20px;
+  background-color:transparent;
+  display: flex;
+  column-gap: 14cm;
+}
+nav.pro{
+  padding: 20px;
+  background: transparent;
+  padding-top: 3%;
+}
+label.title{
+  font-size: 24px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  padding-left: 43%;
+  color: #443c3c;
+}
+
+/* main-content */
+
+.main-content{
+  padding: 14em;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+  background-image: url(images/DR_PS.jpg);
+  
+}
+.label-content{
+  font-size: 80px;
+  color: #A52A2A;
+  font-weight: bold;
+  
+}
+
+nav.division{
+  padding: 44px;
+}
+
+/* .main-content close */
+
+
+
+/* contactus */
+
+.contact-image{
+  width: 100%;
+  height: 120vh;
+  padding-top: 22px;
+} 
+
+/* contactus */
+
+
+/* footerbegins */
+
+.footer-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 30px 30px;
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding-left: 30.6em;
+}
+
+.social img {
+  width: 35px;
+  height: 35px;
+}
+
+.social a {
+  text-decoration: none;
+  margin-right: 20px;
+  
+}
+.divider {
+  width: 95%;
+  height: 1px;
+  background-color: #555;
+  margin: 40px auto;
+}
+
+/* footerends */
+
+/* responsive */
+
+@media (min-width: 1440px) {
+  .box {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .divider {
+    max-width: 90%;
+  }
+}
